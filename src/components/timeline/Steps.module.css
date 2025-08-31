@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Heebo:wght@300;400;500;700&display=swap');
+
+.container {
+  width: 100%;
+  position: relative;
+  background: white;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.content {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.titleSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.mainTitle {
+  font-size: 3rem;
+  color: black;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+.timeline {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.timelineProgress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: black;
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: progressPulse 3s infinite;
+}
+
+@keyframes progressPulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.7; }
+}
+
+.timelineItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 2;
+}
+
+.timelineItem.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.timelineItem.inactive {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.numberText {
+  font-family: 'Assistant', sans-serif;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(5deg);
+  text-shadow: 
+    2px 2px 3px rgba(255, 255, 255, 0.3),
+    -2px -2px 3px rgba(0, 0, 0, 0.1);
+  transition: all 1.2s ease-out;
+  display: inline-block;
+}
+
+.numberOutline {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.numberFilled {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+  -webkit-text-fill-color: black;
+  color: black;
+  text-shadow: 
+    2px 2px 3px rgba(255, 255, 255, 0.3),
+    -2px -2px 3px rgba(0, 0, 0, 0.1);
+  animation: fillNumber 1.2s ease-out forwards;
+}
+
+@keyframes fillNumber {
+  0% {
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    -webkit-text-fill-color: black;
+  }
+}
+
+.timelineContent {
+  max-width: 500px;
+  width: 100%;
+  direction: rtl;
+  position: relative;
+  z-index: 3;
+  margin-top: 2rem;
+}
+
+.contentCard {
+  background: white;
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem 2rem;
+  margin-top: 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.cardActive {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: black;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stepDescription {
+  color: #374151;
+  line-height: 1.8;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .numberText {
+    font-size: 6rem;
+  }
+  
+  .timelineContent {
+    max-width: 90%;
+  }
+  
+  .contentCard {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  .stepNumber {
+    top: -2.5rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .timelineItem {
+    margin-bottom: 4rem;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .numberText {
+    font-size: 4.5rem;
+  }
+  
+  .contentCard {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .stepNumber {
+    top: -2rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .timelineItem {
+    margin-bottom: 3rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+}

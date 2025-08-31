@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: "Comorant";
+  text-align: center;
+  margin: 1% auto;
+  direction: rtl;
+  width: 100%;
+  color: black;
+}
+
+.explain {
+  font-size: 25px;
+  direction: rtl;
+  width: 65%;
+  text-align: center;
+  margin: 2% auto;
+  font-family: "AssistantR";
+}
+
+.scrollTrack {
+  display: flex;
+  width: fit-content;
+  animation: scroll 50s linear infinite;
+  gap: 20px; /* מרווח בין הקבוצות */
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  width: 380px;  /* הגדלתי מ-300px */
+  height: 500px; /* הגדלתי מ-400px */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 450px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .explain {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .imageWrapper {
+    width: 300px;  /* הגדלתי מ-250px */
+    height: 420px; /* הגדלתי מ-350px */
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 1050px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .explain {
+    font-size: 20px;
+    width: 80%;
+  }
+
+  .imageWrapper {
+    width: 340px;  /* הגדלתי מ-280px */
+    height: 460px; /* הגדלתי מ-380px */
+  }
+}

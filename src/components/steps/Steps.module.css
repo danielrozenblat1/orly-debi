@@ -1,0 +1,395 @@
+/* Steps.module.css */
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  direction: rtl;
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  padding: 1.5rem;
+}
+
+.iconContainer {
+  margin-bottom: 1rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepTitle {
+  font-family: 'OpenSans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #000000;
+}
+
+.stepDescription {
+  font-family: 'HeeboR', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  color: #000000;
+}
+
+.connector {
+  width: 1px;
+  height: 3rem;
+  background: #333333;
+  margin: 1rem 0;
+  transform-origin: top center;
+}
+
+/* Responsive Design */
+
+/* מתחת ל-350px */
+@media (max-width: 349px) {
+  .stepsContainer {
+    padding: 0.8rem 0.3rem;
+  }
+  
+  .stepItem {
+    max-width: 90%;
+    padding: 0.5rem;
+  }
+  
+  .iconContainer {
+    width: 35%;
+    max-width: 120px;
+    max-height: 120px;
+  }
+  
+  .stepTitle {
+    font-size: 0.9rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.8rem;
+  }
+  
+  .connector {
+    height: 1.5rem;
+    width: 1px;
+  }
+}
+
+/* 350-450px */
+@media (min-width: 350px) and (max-width: 450px) {
+  .stepsContainer {
+    padding: 1rem 0.4rem;
+  }
+  
+  .stepItem {
+    max-width: 85%;
+    padding: 0.6rem;
+  }
+  
+  .iconContainer {
+    width: 30%;
+    max-width: 140px;
+    max-height: 140px;
+  }
+  
+  .stepTitle {
+    font-size: 1.2rem;
+    width: 90%;
+    margin: 1% auto;
+  }
+  
+  .stepDescription {
+    font-size: 0.9rem;
+    width: 90%;
+    margin: 1% auto;
+  }
+  
+  .connector {
+    height: 1.8rem;
+  }
+}
+
+/* 450-550px */
+@media (min-width: 450px) and (max-width: 550px) {
+  .stepsContainer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .stepItem {
+    max-width: 80%;
+    padding: 0.75rem;
+  }
+  
+  .iconContainer {
+    width: 28vw;
+    height: 28vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  .stepTitle {
+    font-size: 1rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.9rem;
+  }
+  
+  .connector {
+    height: 2rem;
+  }
+}
+
+/* 550-650px */
+@media (min-width: 550px) and (max-width: 650px) {
+  .stepsContainer {
+    padding: 1.2rem 0.6rem;
+  }
+  
+  .stepItem {
+    max-width: 75%;
+    padding: 0.8rem;
+  }
+  
+  .iconContainer {
+    width: 25vw;
+    height: 25vw;
+    max-width: 160px;
+    max-height: 160px;
+  }
+  
+  .stepTitle {
+    font-size: 1.05rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.95rem;
+  }
+  
+  .connector {
+    height: 2.2rem;
+  }
+}
+
+/* 650-750px */
+@media (min-width: 650px) and (max-width: 750px) {
+  .stepsContainer {
+    padding: 1.3rem 0.7rem;
+  }
+  
+  .stepItem {
+    max-width: 260px;
+    padding: 0.9rem;
+  }
+  
+  .iconContainer {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .stepTitle {
+    font-size: 0.9rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.8rem;
+  }
+  
+  .connector {
+    height: 2.4rem;
+  }
+}
+
+/* 750-850px */
+@media (min-width: 750px) and (max-width: 850px) {
+  .stepsContainer {
+    padding: 1.4rem 0.8rem;
+  }
+  
+  .stepItem {
+    max-width: 280px;
+    padding: 1rem;
+  }
+  
+  .iconContainer {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .stepTitle {
+    font-size: 0.95rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.85rem;
+  }
+  
+  .connector {
+    height: 2.6rem;
+  }
+}
+
+/* 850-950px */
+@media (min-width: 850px) and (max-width: 950px) {
+  .stepsContainer {
+    padding: 1.5rem 0.9rem;
+  }
+  
+  .stepItem {
+    max-width: 300px;
+    padding: 1.1rem;
+  }
+  
+  .iconContainer {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .stepTitle {
+    font-size: 1rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.9rem;
+  }
+  
+  .connector {
+    height: 2.8rem;
+  }
+}
+
+/* 950-1050px */
+@media (min-width: 950px) and (max-width: 1050px) {
+  .stepsContainer {
+    padding: 1.6rem 1rem;
+  }
+  
+  .stepItem {
+    max-width: 320px;
+    padding: 1.2rem;
+  }
+  
+  .iconContainer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .stepTitle {
+    font-size: 1.05rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.95rem;
+  }
+  
+  .connector {
+    height: 3rem;
+  }
+}
+
+/* 1050-1150px */
+@media (min-width: 1050px) and (max-width: 1150px) {
+  .stepsContainer {
+    padding: 1.7rem 1.1rem;
+  }
+  
+  .stepItem {
+    max-width: 340px;
+    padding: 1.3rem;
+  }
+  
+  .iconContainer {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+  
+  .stepDescription {
+    font-size: 1rem;
+  }
+  
+  .connector {
+    height: 3.2rem;
+  }
+}
+
+/* 1150-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+  .stepsContainer {
+    padding: 1.8rem 1.2rem;
+  }
+  
+  .stepItem {
+    max-width: 360px;
+    padding: 1.4rem;
+  }
+  
+  .iconContainer {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .stepTitle {
+    font-size: 1.15rem;
+  }
+  
+  .stepDescription {
+    font-size: 1.05rem;
+  }
+  
+  .connector {
+    height: 3.4rem;
+  }
+}
+
+/* מעל 1250px - גדלים מקסימליים */
+@media (min-width: 1250px) {
+  .stepsContainer {
+    padding: 2rem 1rem;
+  }
+  
+  .stepItem {
+    max-width: 380px;
+    padding: 1.5rem;
+  }
+  
+  .iconContainer {
+    width: 95px;
+    height: 95px;
+  }
+  
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+  
+  .stepDescription {
+    font-size: 1.1rem;
+  }
+  
+  .connector {
+    height: 3.6rem;
+  }
+}
+.svgIcon {
+  width: 100%;
+  height: 100%;
+}

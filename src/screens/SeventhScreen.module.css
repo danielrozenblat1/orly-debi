@@ -1,0 +1,159 @@
+.description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 1% 0;
+  text-align: center;
+width:90%;
+margin:2% auto;
+    direction: rtl;
+  font-family: 'AssistantR', sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  direction: rtl;
+  padding: 1% 0;
+  text-align: center;
+  line-height: 1.25;
+  font-family: 'Assistant';
+  perspective: 1000px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* מתחת ל-350px */
+@media (max-width: 349px) {
+  .description {
+    font-size: 1rem;
+    padding: 2% 0;
+    letter-spacing: 0.003em;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    padding: 2% 0;
+    line-height: 1.2;
+  }
+}
+
+/* 350-450px */
+@media (min-width: 350px) and (max-width: 450px) {
+  .description {
+    font-size: 1.1rem;
+    padding: 1.5% 0;
+  }
+  
+  .title {
+    font-size: 1.7rem;
+    padding: 1.5% 0;
+    width:90%;
+    margin:2% auto;
+    line-height: 1.22;
+  }
+}
+
+/* 450-550px */
+@media (min-width: 450px) and (max-width: 550px) {
+  .description {
+    font-size: 1.2rem;
+    padding: 1.25% 0;
+  }
+  
+  .title {
+    font-size: 1.9rem;
+    padding: 1.25% 0;
+    line-height: 1.23;
+  }
+}
+
+/* 550-650px */
+@media (min-width: 550px) and (max-width: 650px) {
+  .description {
+    font-size: 1.3rem;
+    padding: 1.1% 0;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    padding: 1.1% 0;
+    line-height: 1.24;
+  }
+}
+
+/* 650-750px */
+@media (min-width: 650px) and (max-width: 750px) {
+  .description {
+    font-size: 1.35rem;
+    padding: 1.05% 0;
+  }
+  
+  .title {
+    font-size: 2.3rem;
+    padding: 1.05% 0;
+  }
+}
+
+/* 750-850px */
+@media (min-width: 750px) and (max-width: 850px) {
+  .description {
+    font-size: 1.4rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* 850-950px */
+@media (min-width: 850px) and (max-width: 950px) {
+  .description {
+    font-size: 1.45rem;
+    padding: 0.95% 0;
+  }
+  
+  .title {
+    font-size: 2.6rem;
+    padding: 0.95% 0;
+  }
+}
+
+/* 950-1050px */
+@media (min-width: 950px) and (max-width: 1050px) {
+  .description {
+    font-size: 1.5rem;
+    padding: 0.9% 0;
+  }
+  
+  .title {
+    font-size: 2.7rem;
+    padding: 0.9% 0;
+  }
+}
+
+/* 1050-1150px */
+@media (min-width: 1050px) and (max-width: 1150px) {
+  .description {
+    font-size: 1.55rem;
+    padding: 0.85% 0;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+    padding: 0.85% 0;
+  }
+}
+
+/* 1150-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+  .description {
+    font-size: 1.6rem;
+    padding: 0.8% 0;
+  }
+  
+  .title {
+    font-size: 2.9rem;
+    padding: 0.8% 0;
+  }
+}
+

@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ScrollReveal from 'scrollreveal';
 import { Player } from '@lordicon/react';
-import plans from "../icons/wired-outline-731-real-estate-building-project-hover-pinch (2).json"
+import plans from "../icons/wired-outline-402-legal-balance-legal-hover-pinch.json"
+import budget from "../icons/wired-outline-731-real-estate-building-project-hover-pinch (2).json"
+import money from "../icons/wired-outline-414-money-bag-dollar-hover-shake (2).json"
+import dizzy from "../icons/wired-outline-1252-dizz-hover-pinch (2).json"
+import house from "../icons/wired-outline-63-home-loop-smoke.json"
 import styles from "./SixthScreen.module.css";
 import PearlGrid from '../components/pains/Pains';
 import IconTextComponent from '../components/can copy/Can';
@@ -172,12 +176,12 @@ const SixthScreen = () => {
       </div>
    <div className={styles.row}>
     <IconTextComponent text="אתם צריכים לקבל החלטות קריטיות עוד לפני שבכלל נסגרתם על סגנון וכיוון" icon={plans}/>
-        <IconTextComponent text="עוד לא התחלתם והתקציב שהקצבתם לתהליך מתחיל להרגיש כמו טיפה בים" icon={plans}/>
-    <IconTextComponent text="אתם מפחדים לבזבז עשרות אלפי שקלים על טעויות מיותרות " icon={plans}/>
+        <IconTextComponent text="עוד לא התחלתם והתקציב שהקצבתם לתהליך מתחיל להרגיש כמו טיפה בים" icon={budget}/>
+    <IconTextComponent text="אתם מפחדים לבזבז עשרות אלפי שקלים על טעויות מיותרות " icon={money}/>
    </div>
      <div className={styles.row}>
-    <IconTextComponent text="כבר התחלתם להתבלבל מקבלנים וספקים שכל אחד מציע דבר אחר" icon={plans}/>
-        <IconTextComponent text="עולים חששות שהבית לא ייראה בדיוק כמו שתכננתם.." icon={plans}/>
+    <IconTextComponent text="כבר התחלתם להתבלבל מקבלנים וספקים שכל אחד מציע דבר אחר" icon={dizzy}/>
+        <IconTextComponent text="עולים חששות שהבית לא ייראה בדיוק כמו שתכננתם.." icon={house}/>
 
    </div>
    <div className={styles.description}>כשיש לכם מישהי שמבינה בדיוק איפה להתחיל, איך להימנע מטעויות יקרות ומלווה אתכם צעד אחר צעד התהליך פתאום הופך להיות פשוט ומהנה במקום מלחיץ ומבלבל <strong>והכי חשוב</strong>.

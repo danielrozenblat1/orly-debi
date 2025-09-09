@@ -112,7 +112,7 @@
   display: inline-block;
 }
 
-/* Glass Container for All Text Including Title */
+/* Glass Container for All Text Including Logo */
 .textContainer {
   background: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(3px) saturate(120%);
@@ -126,15 +126,24 @@
   animation: fadeInUp 1.5s ease-out 0.5s forwards;
 }
 
-/* עיצוב מעודכן לכותרת עם GSAP */
+/* Logo Image Styles */
+.logoImage {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.5rem 0;
+  opacity: 0;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  transition: all 0.5s ease;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* הסרת העיצוב הישן של הכותרת */
 .brand {
-  font-family: 'Forum';
-  font-size: 5rem;
-  font-weight: 300;
-  margin: 0 0 1rem 0;
-  position: relative;
-  z-index: 1;
-  perspective: 1000px;
+  display: none;
 }
 
 .subtitle {
@@ -541,8 +550,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .brand {
-    font-size: 3.5rem;
+  /* Logo responsive styling */
+  .logoImage {
+    max-width: 200px;
+    margin-bottom: 1rem;
   }
 
   .textContainer {
@@ -595,5 +606,20 @@
 
   .formButtons {
     flex-direction: column;
+  }
+}
+
+/* Additional responsive breakpoints for very small screens */
+@media (max-width: 480px) {
+  .logoImage {
+    max-width: 160px;
+  }
+  
+  .subtitle {
+    font-size: 1.3em;
+  }
+  
+  .description {
+    font-size: 1rem;
   }
 }

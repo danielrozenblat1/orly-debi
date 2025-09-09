@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import styles from "./Button.module.css";
+import PrivacyPolicy from '../privacy/Privacy';
 
 const Button = (props) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -15,6 +16,9 @@ const Button = (props) => {
   // State for form submission status
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  
+  // הוסף state עבור מדיניות הפרטיות
+  const [agreed, setAgreed] = useState(false);
 
   // Refs for form fields
   const fullNameRef = useRef(null);
@@ -43,7 +47,14 @@ const Button = (props) => {
         phone: '',
         reason: ''
       });
+      setAgreed(false); // איפוס גם לתיבת האישור
     }
+  };
+
+  // הוסף פונקציה לטיפול בקליק על מדיניות הפרטיות
+  const handlePrivacyClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   // Handle form submission
@@ -53,6 +64,12 @@ const Button = (props) => {
     const name = fullNameRef.current.value;
     const phone = phoneRef.current.value;
     const reason = reasonRef.current.value;
+    
+    // בדיקת אישור מדיניות הפרטיות
+    if (!agreed) {
+      alert("עליך לאשר את תנאי השימוש ומדיניות הפרטיות");
+      return;
+    }
     
     // Validate inputs
     let valid = true;
@@ -132,6 +149,7 @@ const Button = (props) => {
             phone: '',
             reason: ''
           });
+          setAgreed(false); // איפוס גם לתיבת האישור
           closeForm();
         }, 3000);
       } else {
@@ -157,22 +175,22 @@ const Button = (props) => {
 
       {/* Form Overlay */}
       {isFormOpen && (
-        <div className={styles.formOverlay} onClick={closeForm}>
-          <div className={styles.formModal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.formHeader}>
-              <button className={styles.formCloseButton} onClick={closeForm}>
-                <FaTimes />
-              </button>
-            </div>
+        <div className={styles.contactOverlay + ' ' + styles.active} onClick={closeForm}>
+          <div className={styles.contactForm} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeButton} onClick={closeForm}>
+              <FaTimes />
+            </button>
             
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <h2 className={styles.formTitle}>יצירת קשר</h2>
+            
+            <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="fullName">שם מלא</label>
+                <label className={styles.formLabel} htmlFor="fullName">שם מלא</label>
                 <input
                   type="text"
                   id="fullName"
                   name="fullName"
-                  className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
+                  className={`${styles.formInput} ${errors.fullName ? styles.inputError : ''}`}
                   placeholder="השם המלא שלך"
                   disabled={isSubmitting || submitted}
                   ref={fullNameRef}
@@ -181,12 +199,12 @@ const Button = (props) => {
               </div>
               
               <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="phone">מספר טלפון</label>
+                <label className={styles.formLabel} htmlFor="phone">מספר טלפון</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  className={`${styles.input} ${errors.phone ? styles.inputError : ''}`}
+                  className={`${styles.formInput} ${errors.phone ? styles.inputError : ''}`}
                   placeholder="050-0000000"
                   disabled={isSubmitting || submitted}
                   ref={phoneRef}
@@ -195,12 +213,12 @@ const Button = (props) => {
               </div>
               
               <div className={styles.formGroup}>
-                <label className={styles.label} htmlFor="reason">סיבת הפנייה</label>
+                <label className={styles.formLabel} htmlFor="reason">סיבת הפנייה</label>
                 <textarea
                   id="reason"
                   name="reason"
                   rows="4"
-                  className={`${styles.textarea} ${errors.reason ? styles.inputError : ''}`}
+                  className={`${styles.formTextarea} ${errors.reason ? styles.inputError : ''}`}
                   placeholder="סיבת הפנייה"
                   disabled={isSubmitting || submitted}
                   ref={reasonRef}
@@ -208,13 +226,60 @@ const Button = (props) => {
                 {errors.reason && <p className={styles.errorText}>{errors.reason}</p>}
               </div>
               
-              <button 
-                type="submit" 
-                className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''} ${submitted ? styles.submitted : ''}`}
-                disabled={isSubmitting || submitted}
-              >
-                {isSubmitting ? 'שולח...' : submitted ? 'נשלח בהצלחה!' : 'אורלי, בואי נדבר!'}
-              </button>
+              {/* תיבת האישור למדיניות הפרטיות */}
+              <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                marginTop: "20px",
+                marginBottom: "20px"
+              }}>
+                <label style={{ 
+                  direction: "rtl", 
+                  fontFamily: "AssistantR", 
+                  fontSize: "0.9rem", 
+                  textAlign: "right", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  flexWrap: "wrap", 
+                  gap: "5px" 
+                }}>
+                  <input
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={() => setAgreed(!agreed)}
+                    style={{ marginLeft: "10px" }}
+                    disabled={isSubmitting || submitted}
+                  />
+                  קראתי את
+                  <span onClick={handlePrivacyClick}>
+                    <PrivacyPolicy 
+                      ownerName="אורלי דבי" 
+                      email="od.intdesign@gmail.com" 
+                      phone="+972 50-273-7378" 
+                      domain="https://orlydebi.co.il/" 
+                    />
+                  </span>
+                  ואני מאשר/ת
+                </label>
+              </div>
+              
+              <div className={styles.formButtons}>
+                <button 
+                  type="submit" 
+                  className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''} ${submitted ? styles.submitted : ''}`}
+                  disabled={isSubmitting || submitted}
+                >
+                  {isSubmitting ? 'שולח...' : submitted ? 'נשלח בהצלחה!' : 'אורלי, בואי נדבר!'}
+                </button>
+                <button 
+                  type="button" 
+                  className={styles.cancelButton}
+                  onClick={closeForm}
+                  disabled={isSubmitting || submitted}
+                >
+                  ביטול
+                </button>
+              </div>
             </form>
           </div>
         </div>

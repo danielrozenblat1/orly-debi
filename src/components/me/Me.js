@@ -99,32 +99,31 @@ const AboutMe = () => {
           <h2 className={styles.mainTitle}>נעים מאוד, אורלי דבי</h2>
 
           <div className={styles.quoteContainer} ref={quoteRef}>
-         <p className={styles.quote}>
-    "הרגע הכי מרגש בשבילי הוא כשאני רואה את ההקלה על הפנים שלכם, כשאתם מבינים שהכול מסודר ויש מי שמוביל אתכם"
-  </p>
+            <p className={styles.quote}>
+              "הרגע הכי מרגש בשבילי הוא כשאני רואה את ההקלה על הפנים שלכם, כשאתם מבינים שהכול מסודר ויש מי שמוביל אתכם"
+            </p>
           </div>
 
           <div className={styles.textBlock}>
             <p className={styles.paragraph}>
-              כל החיים עסקתי באומנות. עיצבתי תכשיטים, שולחנות, עוגות - כל מה שמאפשר לי לדייק, לייצר יופי ולרגש. אבל היה בי גם צד אחר. פרקטי, חד, ריאלי וכשהבנתי שאני יכולה לשלב את שני הצדדים האלה במקום אחד - זה הרגע שהחלטתי להכנס לתחום.
+              כל החיים שלי סבבו סביב אומנות. עיצבתי תכשיטים, שולחנות, עוגות - כל מה שאפשר לי לדייק, לייצר יופי ולרגש אנשים. אבל לצד היצירתיות שלי, תמיד היה בי גם צד ריאלי (שאפילו כולל תואר במדעי המחשב) והשילוב הזה בין הצדדים הוא הבסיס של כל פרויקט שאני מובילה - חשיבה יצירתית מצד אחד, ותכנון מסודר, מהיר ויעיל מצד שני.
             </p>
 
             <div className={styles.divider}></div>
-     <p className={styles.paragraph}>
-  רק כשהתחלתי ללוות משפחות בתהליך, הבנתי כמה תהליך כזה הכרחי!. זה לא רק עיצוב ותכנון בית. מבחינתי, התהליך איתי זה לשאול את השאלות הנכונות, להבין מה הנושאים שעלולים לעורר מתח בין בני הזוג ולעזור להם לבחור מתוך בהירות וביטחון, למנוע טעויות קריטיות שעולות המון כסף (ובהמון כאבי ראש) ובסוף, להוביל את הלקוחות שלי אל בית החלומות שלהם.
-</p>
+
+        <p className={styles.paragraph}>כשהתחלתי ללוות משפחות, הבנתי כמה התהליך הוא הכרחי ואפילו משנה חיים! זה לא רק עיצוב, זה תכנון נכון של בית. זה להבין איך תרגישו בבית שלכם ביום יום. איפה תזוזו, איפה תתארגנו בבוקר, איפה תשבו בערב, ושאחרי כל המסע הזה - אתם תכנסו לבית שחלמתם עליו בהתחלה בלי כאב ראש מכל הדרך ובלי כאב בכיס מטעויות שאפשר למנוע בקלות!</p>
+
             <div className={styles.divider}></div>
 
-   
 
             <p className={styles.finalText}>
-              מה שמניע אותי זה השקט שלכם. לדעת שלא תצטרכו להתמודד לבד מול קבלנים, שלא תצטרכו לריב אחד עם השנייה מרוב תסכול, ושכשתיכנסו הביתה - תדעו שהכול נעשה בדיוק לפי מי שאתם ואיך שאתם חיים. כשאני נכנסת לתמונה, אתם יודעים מה קורה, מתי, עם מי ובכמה. בלי כאבי ראש, בלי טעויות ובלי להמר.
+              מה שמניע אותי זה השקט שלכם. לדעת שאתם רגועים ומרגישים בידיים טובות, שהתהליך יהיה חלק וברור ושבסוף - תתאהבו בתוצאה!. כשאני נכנסת לתמונה, אתם יודעים מה קורה, מתי, עם מי ובכמה. בלי כאבי ראש, עם ביטחון מלא ובהנאה.
             </p>
           </div>
 
           <button className={styles.ctaButton} onClick={handleWhatsAppMessage}>
             <span className={styles.buttonIcon}>💬</span>
-         הצעד הראשון מתחיל בלחיצה כאן
+            הצעד הראשון מתחיל בלחיצה כאן
           </button>
         </div>
       </div>

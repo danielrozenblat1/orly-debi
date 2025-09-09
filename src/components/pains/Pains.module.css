@@ -1,0 +1,379 @@
+/* PearlGrid.module.css - קובץ CSS מעודכן */
+
+.pearlGridContainer {
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.pearlGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  max-width: 1200px;
+
+  justify-content: center;
+  width: 100%;
+}
+
+.pearlCard {
+  position: relative;
+  width: 300px;
+  height: 70px;
+  /* רקע בז מבריק עם Glass Morphism מושלם */
+  background: rgba(250, 249, 247, 0.85);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+    direction: rtl;
+  /* אפקט זכוכית מתקדם עם בז מבריק */
+  background-image: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(250, 249, 247, 0.8) 25%, 
+      rgba(248, 247, 243, 0.7) 50%,
+      rgba(255, 254, 252, 0.85) 75%,
+      rgba(252, 251, 249, 0.9) 100%);
+  
+  /* צלליות מתקדמות לאפקט זכוכית */
+  box-shadow: 
+    0 8px 32px rgba(245, 244, 240, 0.4),
+    0 4px 16px rgba(248, 247, 243, 0.3),
+    0 2px 8px rgba(250, 249, 247, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(245, 244, 240, 0.3),
+    inset 1px 0 0 rgba(255, 255, 255, 0.7),
+    inset -1px 0 0 rgba(248, 247, 243, 0.5);
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* קו זוהר עליון מבריק */
+.pearlCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(250, 249, 247, 0.9) 50%, 
+    rgba(255, 255, 255, 0.8) 80%,
+    transparent 100%);
+  border-radius: 0 0 2px 2px;
+}
+
+/* קו זוהר תחתון */
+.pearlCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(245, 244, 240, 0.6) 50%, 
+    transparent 100%);
+}
+
+/* אפקט hover מתקדם */
+.pearlCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 254, 252, 0.9);
+  border-color: rgba(255, 255, 255, 0.8);
+  
+  box-shadow: 
+    0 16px 48px rgba(245, 244, 240, 0.5),
+    0 8px 24px rgba(248, 247, 243, 0.4),
+    0 4px 12px rgba(250, 249, 247, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(245, 244, 240, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.8),
+    inset -1px 0 0 rgba(248, 247, 243, 0.6);
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  /* הפיכת הכיוון - אייקון ימין, טקסט שמאל */
+  flex-direction: row;
+  direction: rtl;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  /* רקע בז מבריק לאייקון */
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(250, 249, 247, 0.8) 50%,
+    rgba(248, 247, 243, 0.9) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  
+  box-shadow: 
+    0 4px 16px rgba(245, 244, 240, 0.3),
+    0 2px 8px rgba(248, 247, 243, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(245, 244, 240, 0.3);
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pearlCard:hover .iconContainer {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(252, 251, 249, 0.95) 50%,
+    rgba(250, 249, 247, 0.95) 100%);
+  
+  box-shadow: 
+    0 6px 20px rgba(245, 244, 240, 0.4),
+    0 3px 12px rgba(248, 247, 243, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(245, 244, 240, 0.4);
+  
+  transform: scale(1.08);
+}
+
+.cardIcon {
+  width: 20px;
+  height: 20px;
+  color: #5a5a5a;
+  stroke-width: 1.8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 1px 3px rgba(245, 244, 240, 0.5));
+}
+
+.pearlCard:hover .cardIcon {
+  color: #404040;
+  transform: scale(1.15);
+  filter: drop-shadow(0 2px 6px rgba(245, 244, 240, 0.7));
+}
+
+.description {
+  flex: 1;
+  text-align: left; /* שינוי לשמאל */
+  margin-left: 1rem; /* שינוי מ margin-right */
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  direction: rtl;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* אפקט טקסט מבריק */
+  text-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.8),
+    0 2px 4px rgba(248, 247, 243, 0.4);
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pearlCard:hover .description {
+  color: #2a2a2a;
+  text-shadow: 
+    0 2px 4px rgba(255, 255, 255, 0.9),
+    0 3px 6px rgba(248, 247, 243, 0.5);
+  transform: translateX(3px); /* שינוי כיוון התנועה */
+}
+
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(250, 249, 247, 0.2) 30%,
+    rgba(248, 247, 243, 0.1) 60%,
+    transparent 80%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  animation: pearlShimmer 6s ease-in-out infinite;
+}
+
+.pearlCard:hover .cardGlow {
+  opacity: 1;
+  animation: pearlShimmerActive 3s ease-in-out infinite;
+}
+
+/* אנימציות מתקדמות */
+@keyframes pearlShimmer {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes pearlShimmerActive {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(120deg) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design */
+
+/* טלפונים */
+@media (max-width: 768px) {
+  .pearlGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .pearlCard {
+    width: 90%;
+    max-width: 280px;
+    height: 65px;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .pearlGridContainer {
+    padding: 1rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    margin-left: 0.8rem;
+  }
+  
+  .iconContainer {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+  
+  .cardIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* טאבלטים */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .pearlGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 640px;
+  }
+  
+  .pearlCard {
+    width: 290px;
+  }
+  
+  .pearlCard:nth-child(odd):last-child {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+}
+
+/* מחשבים */
+@media (min-width: 1024px) {
+  .pearlGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    max-width: 980px;
+  }
+  
+  .pearlCard {
+    width: 300px;
+    height: 75px;
+    padding: 1.1rem 1.6rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-left: 1.2rem;
+  }
+  
+  .iconContainer {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+  }
+  
+  .cardIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* מסכים גדולים */
+@media (min-width: 1200px) {
+  .pearlCard {
+    width: 320px;
+    height: 80px;
+    padding: 1.3rem 1.8rem;
+  }
+  
+  .pearlGrid {
+    max-width: 1040px;
+    gap: 2rem;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    margin-left: 1.4rem;
+  }
+  
+  .iconContainer {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+  
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* אפקטים נוספים */
+.pearlCard:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 0 0 3px rgba(250, 249, 247, 0.6),
+    0 12px 40px rgba(245, 244, 240, 0.5),
+    0 6px 20px rgba(248, 247, 243, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(245, 244, 240, 0.4);
+}
+
+.pearlCard:active {
+  transform: translateY(-2px) scale(0.98);
+  transition: all 0.15s ease;
+  background: rgba(248, 247, 243, 0.9);
+}

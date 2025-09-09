@@ -14,14 +14,18 @@ import Recommendations from './components/recommends/Recommends';
 import BeforeAfter from './screens/RecommendsScreen';
 import Works from './components/recommends/Works';
 import SevevnthScreen from './screens/SeventhScreen';
+import SixthScreen from './screens/SixthScreen';
+import PlayerColumns from './components/columns/Columns';
 function App() {
   return <>
   {/* <ArcoriaTitleEffects/> */}
   {/* <ImageCarousel/> */}
   <ArchitectLanding/>
-<SecondScreen/>
+{/* <SecondScreen/> */}
+<SixthScreen/>
+<PlayerColumns/>
   <AboutMe/>
-<Works/>
+{/* <Works/> */}
 <ProjectsScreen/>
 <FirstScreen/>
 

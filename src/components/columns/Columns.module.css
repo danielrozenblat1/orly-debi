@@ -1,0 +1,324 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 0 auto;
+  width: 80%;
+  direction: rtl;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  position: relative;
+  z-index: 1;
+}
+
+.cardContent {
+  width: 100%;
+  background: linear-gradient(145deg, 
+    rgba(252, 251, 248, 0.85) 0%,
+    rgba(248, 245, 240, 0.9) 25%,
+    rgba(250, 248, 245, 0.88) 50%,
+    rgba(253, 251, 247, 0.92) 75%,
+    rgba(249, 246, 242, 0.87) 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 
+      rgba(255, 253, 250, 0.8) -1px -1px 2px,
+      rgba(240, 235, 225, 0.15) 1px 1px 3px,
+      rgba(235, 228, 215, 0.2) 2px 2px 8px,
+      inset rgba(255, 254, 251, 0.4) 0 1px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(248, 244, 237, 0.6);
+}
+
+.cardContent:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+      rgba(255, 253, 250, 0.9) -1px -1px 2px,
+      rgba(240, 235, 225, 0.2) 1px 1px 4px,
+      rgba(235, 228, 215, 0.25) 3px 3px 12px,
+      inset rgba(255, 254, 251, 0.5) 0 1px 0;
+  background: linear-gradient(145deg, 
+    rgba(254, 252, 249, 0.9) 0%,
+    rgba(250, 247, 242, 0.95) 25%,
+    rgba(252, 249, 246, 0.93) 50%,
+    rgba(255, 252, 248, 0.97) 75%,
+    rgba(251, 248, 244, 0.92) 100%);
+}
+
+.cardContent.active {
+  background: linear-gradient(145deg, 
+    rgba(255, 253, 249, 0.95) 0%,
+    rgba(252, 249, 244, 1) 25%,
+    rgba(254, 251, 247, 0.98) 50%,
+    rgba(255, 253, 249, 1) 75%,
+    rgba(253, 250, 246, 0.97) 100%);
+  box-shadow: 
+      rgba(255, 254, 251, 1) -1px -1px 2px,
+      rgba(240, 235, 225, 0.25) 1px 1px 4px,
+      rgba(235, 228, 215, 0.3) 3px 3px 15px,
+      inset rgba(255, 254, 252, 0.6) 0 1px 1px;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.text {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "AssistantR";
+  background: linear-gradient(135deg, #8B7355, #A0916B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(139, 115, 85, 0.1));
+  margin: 0;
+}
+
+.icon {
+  width: 22%;
+  margin: 1% auto;
+  filter: 
+      drop-shadow(2px 2px 4px rgba(205, 195, 175, 0.3))
+      drop-shadow(-2px -2px 4px rgba(255, 254, 251, 0.7));
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 1.5rem 1.5rem 3rem 0;
+  font-family: 'Assistant', sans-serif;
+  text-align: center;
+  direction: rtl;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
+  position: relative;
+  filter: drop-shadow(1px 2px 3px rgba(139, 115, 85, 0.08));
+}
+
+.pointsWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.pointsWrapper.pointsVisible {
+  max-height: 500px;
+}
+
+.pointsContainer {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(205, 195, 175, 0.2);
+}
+
+.point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  text-align: right;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bullet {
+  color: rgba(181, 160, 130, 0.7);
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+}
+
+.pointText {
+  color: rgba(139, 115, 85, 0.85);
+  font-size: 0.9rem;
+  font-family: "AssistantR";
+  line-height: 1.3;
+}
+
+.arrow {
+  color: rgba(181, 160, 130, 0.7);
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.arrowActive {
+  transform: rotate(180deg);
+}
+
+/* Hover effects */
+.cardContent:hover .icon {
+  transform: scale(1.05);
+}
+
+.cardContent:active {
+  transform: scale(0.98);
+}
+
+/* Animation for points */
+.point {
+  transition: all 0.3s ease;
+}
+
+.pointsWrapper .point {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.pointsVisible .point {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--index) * 0.1s);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    width: 75%; /* Increased from 65% to 75% */
+    gap: 1.5rem;
+    padding: 8px;
+  }
+  
+  .column {
+    width: 100%;
+  }
+  
+  .cardContent {
+    padding: 1rem;
+  }
+  
+  .icon {
+    width: 30%;
+  }
+  
+  .text {
+    font-size: 1.2rem; /* Increased from 1.1rem to 1.2rem */
+  }
+  
+  .pointText {
+    font-size: 0.9rem; /* Increased from 0.85rem to 0.9rem */
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    width: 80%; /* Increased from 70% to 80% */
+  }
+  
+  .icon {
+    width: 32%;
+  }
+  
+  .text {
+    font-size: 1.1rem; /* Added larger text size for this breakpoint */
+  }
+  
+  .pointText {
+    font-size: 0.88rem; /* Added larger text size for this breakpoint */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 85%; /* Increased from 75% to 85% */
+  }
+
+  .text {
+    font-size: 1rem; /* Increased from 0.9rem to 1rem */
+  }
+  
+  .icon {
+    width: 35%;
+  }
+  
+  .pointText {
+    font-size: 0.85rem; /* Increased from 0.8rem to 0.85rem */
+  }
+  
+  .title {
+    font-size: 1.9rem; /* Increased from 1.8rem to 1.9rem */
+    margin: 1.2rem 1.2rem 2.5rem 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    width: 90%; /* Increased from 80% to 90% */
+  }
+
+  .text {
+    font-size: 0.9rem; /* Increased from 0.8rem to 0.9rem */
+  }
+  
+  .icon {
+    width: 38%;
+  }
+  
+  .title {
+    font-size: 1.7rem; /* Increased from 1.6rem to 1.7rem */
+  }
+  
+  .pointText {
+    font-size: 0.82rem; /* Added larger text size for this breakpoint */
+  }
+}
+
+/* Print styles */
+@media print {
+  .cardContent {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: white;
+  }
+  
+  .icon {
+    display: none;
+  }
+  
+  .pointsWrapper {
+    max-height: none;
+  }
+  
+  .point {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .arrow {
+    display: none;
+  }
+}

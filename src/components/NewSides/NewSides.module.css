@@ -1,0 +1,341 @@
+/* MinimalComponent.module.css */
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% auto;
+  direction: rtl;
+}
+
+.item {
+  width: 500px;
+  height: auto;
+  margin-bottom: 40px;
+  opacity: 1;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.itemRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.number {
+  font-size: 5rem;
+  font-weight: 200;
+  color: transparent;
+  -webkit-text-stroke: 1px #967654;
+  text-stroke: 1px #967654;
+  font-family: 'Assistant', sans-serif;
+  letter-spacing: 2px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.text {
+  font-family: 'AssistantR', sans-serif;
+  font-size: 16px;
+  color: #2c2c2c;
+  font-weight: 400;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+/* 1150px-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+  .container {
+    max-width: 1200px;
+    margin: 2% auto;
+  }
+  
+  .item {
+    width: 600px;
+    padding: 25px;
+  }
+  
+  .number {
+    font-size: 6rem;
+    min-width: 80px;
+  }
+  
+  .text {
+    font-size: 18px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 25px;
+  }
+}
+
+/* 1050px-1150px */
+@media (min-width: 1050px) and (max-width: 1149px) {
+  .container {
+    max-width: 1100px;
+    margin: 2% auto;
+  }
+  
+  .item {
+    width: 580px;
+    padding: 24px;
+  }
+  
+  .number {
+    font-size: 5.8rem;
+    min-width: 75px;
+  }
+  
+  .text {
+    font-size: 17px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 24px;
+  }
+}
+
+/* 950px-1050px */
+@media (min-width: 950px) and (max-width: 1049px) {
+  .container {
+    max-width: 1000px;
+    margin: 2.5% auto;
+  }
+  
+  .item {
+    width: 550px;
+    padding: 23px;
+  }
+  
+  .number {
+    font-size: 5.5rem;
+    min-width: 70px;
+  }
+  
+  .text {
+    font-size: 16px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 23px;
+  }
+}
+
+/* 850px-950px */
+@media (min-width: 850px) and (max-width: 949px) {
+  .container {
+    max-width: 900px;
+    margin: 2.5% auto;
+  }
+  
+  .item {
+    width: 520px;
+    padding: 22px;
+  }
+  
+  .number {
+    font-size: 5.2rem;
+    min-width: 68px;
+  }
+  
+  .text {
+    font-size: 16px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 22px;
+  }
+}
+
+/* 750px-850px */
+@media (min-width: 750px) and (max-width: 849px) {
+  .container {
+    max-width: 800px;
+    margin: 3% auto;
+  }
+  
+  .item {
+    width: 480px;
+    padding: 20px;
+  }
+  
+  .number {
+    font-size: 5rem;
+    min-width: 65px;
+  }
+  
+  .text {
+    font-size: 16px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 20px;
+  }
+}
+
+/* 650px-750px */
+@media (min-width: 650px) and (max-width: 749px) {
+  .container {
+    max-width: 700px;
+    margin: 3% auto;
+  }
+  
+  .item {
+    width: 450px;
+    padding: 18px;
+  }
+  
+  .number {
+    font-size: 4.5rem;
+    min-width: 60px;
+  }
+  
+  .text {
+    font-size: 15px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 18px;
+  }
+}
+
+/* 550px-650px */
+@media (min-width: 550px) and (max-width: 649px) {
+  .container {
+    max-width: 600px;
+    margin: 3% auto;
+  }
+  
+  .item {
+    width: 400px;
+    padding: 16px;
+  }
+  
+  .number {
+    font-size: 4rem;
+    min-width: 55px;
+  }
+  
+  .text {
+    font-size: 15px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 16px;
+  }
+}
+
+/* 450px-550px */
+@media (min-width: 450px) and (max-width: 549px) {
+  .container {
+    max-width: 500px;
+    margin: 3% auto;
+  }
+  
+  .item {
+    width: 360px;
+    padding: 15px;
+  }
+  
+  .number {
+    font-size: 3.8rem;
+    min-width: 50px;
+  }
+  
+  .text {
+    font-size: 14px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 15px;
+  }
+}
+
+/* 350px-450px */
+@media (min-width: 350px) and (max-width: 449px) {
+  .container {
+    max-width: 400px;
+    margin: 3% auto;
+  }
+  
+  .item {
+    width: 320px;
+    padding: 14px;
+  }
+  
+  .number {
+    font-size: 3.5rem;
+    min-width: 45px;
+  }
+  
+  .text {
+    font-size: 14px;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 14px;
+  }
+}
+
+/* מתחת ל-350px */
+@media (max-width: 349px) {
+  .container {
+    max-width: 300px;
+    margin: 4% auto;
+    padding: 0 10px;
+  }
+  
+  .item {
+    width: 280px;
+    padding: 12px;
+  }
+  
+  .number {
+    font-size: 3rem;
+    min-width: 40px;
+    letter-spacing: 1px;
+  }
+  
+  .text {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .itemRight,
+  .itemLeft {
+    gap: 12px;
+  }
+}

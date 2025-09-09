@@ -11,8 +11,7 @@ import image5Desktop from "../images/אורלי דבי קרוסלת פתיחה �
 import image6Desktop from "../images/אורלי דבי קרוסלת פתיחה מחשבים 6.png";
 import image7Desktop from "../images/אורלי דבי קרוסלת פתיחה מחשבים 7.png";
 
-
-// תמונות למובייל (כרגע זהות, תוכל לשנות אותן ידנית)
+// תמונות למובייל
 import image1Mobile from "../images/אורלי דבי קרוסלת פתיחה 1.png";
 import image2Mobile from "../images/אורלי דבי קרוסלת פתיחה 2.png";
 import image3Mobile from "../images/אורלי דבי קרוסלת פתיחה 3.png";
@@ -22,6 +21,10 @@ import image6Mobile from "../images/אורלי דבי קרוסלת פתיחה 6.
 import image7Mobile from "../images/אורלי דבי קרוסלת פתיחה 7.png";
 import image8Mobile from "../images/אורלי דבי קרוסלת פתיחה 8.png";
 import image9Mobile from "../images/אורלי דבי קרוסלת פתיחה 9.png";
+
+// תמונת הלוגו
+import logoImage from "../images/אורלי דבי לוגו.png";
+
 import Loader from '../components/loader/Loader';
 import PrivacyPolicy from '../components/privacy/Privacy';
 
@@ -37,7 +40,7 @@ const ArchitectLanding = () => {
   const [loadedImagesCount, setLoadedImagesCount] = useState(0);
   
   // Refs for GSAP animations
-  const titleRef = useRef(null);
+  const logoRef = useRef(null);
   const textContainerRef = useRef(null);
   const scrollIndicatorRef = useRef(null);
   
@@ -59,8 +62,8 @@ const ArchitectLanding = () => {
   const reciver = "od.intdesign@gmail.com";
 
   // בחירת תמונות בהתאם לגודל המסך
-  const desktopImages = [image1Desktop, image2Desktop, image3Desktop, image4Desktop, image5Desktop, image6Desktop, image7Desktop];
-  const mobileImages = [image1Mobile, image2Mobile, image3Mobile, image4Mobile, image5Mobile, image6Mobile, image7Mobile, image8Mobile, image9Mobile];
+  const desktopImages = [ image4Desktop, image5Desktop, image6Desktop,image1Desktop, image2Desktop, image3Desktop, image7Desktop];
+  const mobileImages = [image6Mobile,image3Mobile,image1Mobile, image2Mobile,  image4Mobile, image5Mobile,  image7Mobile, image8Mobile, image9Mobile];
   
   // זיהוי מכשיר מובייל
   useEffect(() => {
@@ -76,80 +79,59 @@ const ArchitectLanding = () => {
 
   const images = isMobile ? mobileImages : desktopImages;
 
-  // פונקציה עדינה ליצירת אפקט GSAP קליל לאותיות
-  const createGSAPTitle = () => {
-    if (!titleRef.current || !imagesLoaded) return;
+  // פונקציה ליצירת אפקט GSAP ללוגו
+  const createGSAPLogo = () => {
+    if (!logoRef.current || !imagesLoaded) return;
     
-    // יצירת spans לכל אות
-    const text = "Orly Debi";
-    titleRef.current.innerHTML = text
-      .split('')
-      .map((char, index) => 
-        `<span style="display: inline-block; opacity: 0;">${char === ' ' ? '&nbsp;' : char}</span>`
-      )
-      .join('');
-
-    const letters = titleRef.current.querySelectorAll('span');
-    
-    // GSAP Timeline עדין וקליל
+    // GSAP Timeline עדין וקליל ללוגו
     const tl = gsap.timeline({ delay: 0.8 });
     
-    // אפקט כניסה עדין כמו נוצה
-    tl.fromTo(letters, 
+    // אפקט כניסה עדין ללוגו
+    tl.fromTo(logoRef.current, 
       {
         opacity: 0,
-        y: 30,
-        scale: 0.95,
-        filter: "blur(8px)"
+        y: 50,
+        scale: 0.8,
+        filter: "blur(10px)"
       },
       {
         opacity: 1,
         y: 0,
         scale: 1,
         filter: "blur(0px)",
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: {
-          each: 0.06,
-          from: "start"
-        }
+        duration: 1.2,
+        ease: "power3.out"
       }
     );
     
-    // אפקט זוהר עדין מאוד
-    tl.to(letters,
+    // אפקט זוהר עדין ללוגו
+    tl.to(logoRef.current,
       {
-        textShadow: "0 0 20px rgba(255,255,255,0.3)",
-        duration: 0.6,
-        ease: "power1.out",
-        stagger: {
-          each: 0.04,
-          from: "start"
-        }
+        filter: "drop-shadow(0 0 20px rgba(255,255,255,0.3))",
+        duration: 0.8,
+        ease: "power1.out"
       },
-      "-=0.4"
+      "-=0.6"
     );
     
-    // אינטראקטיביות עדינה
-    letters.forEach(letter => {
-      letter.addEventListener('mouseenter', () => {
-        gsap.to(letter, {
-          y: -5,
-          scale: 1.03,
-          duration: 0.4,
-          ease: "power1.out",
-          textShadow: "0 0 25px rgba(255,255,255,0.5)"
-        });
+    // אינטראקטיביות עדינה ללוגו
+    logoRef.current.addEventListener('mouseenter', () => {
+      gsap.to(logoRef.current, {
+        y: -8,
+        scale: 1.05,
+        duration: 0.5,
+        ease: "power2.out",
+        filter: "drop-shadow(0 0 30px rgba(255,255,255,0.5))"
       });
-      
-      letter.addEventListener('mouseleave', () => {
-        gsap.to(letter, {
-          y: 0,
-          scale: 1,
-          duration: 0.4,
-          ease: "power1.out",
-          textShadow: "0 0 20px rgba(255,255,255,0.3)"
-        });
+    });
+    
+    logoRef.current.addEventListener('mouseleave', () => {
+      gsap.to(logoRef.current, {
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: "power2.out",
+        filter: "drop-shadow(0 0 20px rgba(255,255,255,0.3))"
       });
     });
   };
@@ -175,8 +157,8 @@ const ArchitectLanding = () => {
       }
     );
 
-    // יצירת כותרת עם GSAP
-    createGSAPTitle();
+    // יצירת אנימציה ללוגו
+    createGSAPLogo();
 
     // אנימציית כניסה לאינדיקטור גלילה
     gsap.fromTo(scrollIndicatorRef.current,
@@ -203,14 +185,15 @@ const ArchitectLanding = () => {
   useEffect(() => {
     const preloadImages = () => {
       let loadedCount = 0;
+      const allImages = [...images, logoImage]; // כולל את הלוגו בטעינה מוקדמת
       
-      images.forEach((imageSrc) => {
+      allImages.forEach((imageSrc) => {
         const img = new Image();
         img.onload = () => {
           loadedCount++;
           setLoadedImagesCount(loadedCount);
           
-          if (loadedCount === images.length) {
+          if (loadedCount === allImages.length) {
             setImagesLoaded(true);
             setTimeout(() => {
               setIsLoaded(true);
@@ -223,7 +206,7 @@ const ArchitectLanding = () => {
           setLoadedImagesCount(loadedCount);
           console.error(`Failed to load image: ${imageSrc}`);
           
-          if (loadedCount === images.length) {
+          if (loadedCount === allImages.length) {
             setImagesLoaded(true);
             setTimeout(() => {
               setIsLoaded(true);
@@ -418,15 +401,20 @@ const ArchitectLanding = () => {
 
         {/* Content */}
         <div className={styles.content}>
-          {/* Text Container with Glass Effect - Including Title */}
+          {/* Text Container with Glass Effect - Including Logo */}
           <div ref={textContainerRef} className={styles.textContainer}>
-            <h1 ref={titleRef} className={styles.brand}></h1>
-            <p className={styles.subtitle}>
+            <img 
+              ref={logoRef} 
+              src={logoImage} 
+              alt="Orly Debi Logo" 
+              className={styles.logoImage}
+            />
+            {/* <p className={styles.subtitle}>
               כשחלומות פוגשים מציאות
             </p>
             <p className={styles.description}>
               מעצבת פנים ואדריכלית - ליווי מלא מהשרטוטים עד לקבלת המפתח
-            </p>
+            </p> */}
           </div>
           
           {/* Scroll Indicator */}
@@ -434,8 +422,6 @@ const ArchitectLanding = () => {
             <div className={styles.scrollArrow}></div>
           </div>
         </div>
-
-
 
         {/* Action Buttons Container */}
         <div className={styles.actionButtonsContainer}>
@@ -510,7 +496,6 @@ const ArchitectLanding = () => {
             <label style={{ 
               direction: "rtl", 
               fontFamily: "AssistantR", 
-           
               fontSize: "0.9rem", 
               textAlign: "right", 
               display: "flex", 

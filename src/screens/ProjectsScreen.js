@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './ProjectsScreen.module.css'
 
+// Import all images (replace these with your actual imports)
 import cafe1 from '../images/בית קפה אורלי 1.png'
 import cafe2 from '../images/בית קפה אורלי 2.png'
 import cafe3 from '../images/בית קפה אורלי 3.png'
@@ -93,6 +94,7 @@ const PortfolioShowcase = () => {
       id: 'cafe-project',
       title: 'בית קפה קונדיטורי',
       description: 'מתיחת פנים אינטנסיבית לבית קפה קונדיטורי במרכז הארץ',
+      category: 'עיצוב מסחרי',
       images: [
         cafe1, cafe2, cafe3, cafe4, cafe5,
         cafe6, cafe7, cafe8, cafe9, cafe10,
@@ -104,6 +106,7 @@ const PortfolioShowcase = () => {
       id: 'livui-project',
       title: 'בית קרקע במרכז הארץ',
       description: 'ליווי מלא של תהליך תכנון, עיצוב וביצוע לבית קרקע במרכז הארץ',
+      category: 'ליווי מלא',
       images: [
         livui2, livui1, livui4, livui5,
         livui6, livui7, livui8, livui9, livui10,
@@ -114,6 +117,7 @@ const PortfolioShowcase = () => {
       id: 'kablan-project',
       title: 'דירת קבלן במרכז הארץ',
       description: 'כשהעיר פוגשת את השקט - עיצוב שמביא תחושת קרקע לגובה',
+      category: 'דירת קבלן',
       images: [
         kablan9, kablan1, kablan2, kablan3, kablan4, kablan5,
         kablan6, kablan7, kablan8, kablan10,
@@ -124,6 +128,7 @@ const PortfolioShowcase = () => {
       id: 'shiputz-project',
       title: 'שיפוץ בית קרקע במרכז הארץ',
       description: 'מהפך דרמטי בבית - כשקיר שחור גונב את ההצגה',
+      category: 'שיפוץ',
       images: [
         shiputz15, shiputz18, shiputz2, shiputz1, shiputz3, shiputz4, shiputz5,
         shiputz6, shiputz7, shiputz8, shiputz9, shiputz10,
@@ -169,29 +174,15 @@ const PortfolioShowcase = () => {
         const rect = section.getBoundingClientRect()
         const img = section.querySelector(`.${styles.projectImage}`)
         const content = section.querySelector(`.${styles.projectContent}`)
-        const isIndustrial = content && content.classList.contains(styles.industrialStyle)
 
         if (img) {
-          if (isIndustrial) {
-            const speed = 0.25
-            const yPos = -(rect.top * speed)
-            const rotation = rect.top * 0.02
-            img.style.transform = `translate3d(-50%, calc(-50% + ${yPos}px), 0) scale(1.15) rotate(${rotation}deg)`
-          } else {
-            const speed = 0.15
-            const yPos = -(rect.top * speed)
-            img.style.transform = `translate3d(-50%, calc(-50% + ${yPos}px), 0) scale(1.1)`
-          }
+          const speed = 0.15
+          const yPos = -(rect.top * speed)
+          img.style.transform = `translate3d(-50%, calc(-50% + ${yPos}px), 0) scale(1.1)`
         }
 
         if (content && rect.top < windowHeight * 0.7 && rect.top > -rect.height * 0.3) {
-          if (isIndustrial) {
-            setTimeout(() => {
-              content.classList.add(styles.animate)
-            }, 200)
-          } else {
-            content.classList.add(styles.animate)
-          }
+          content.classList.add(styles.animate)
         }
       })
 
@@ -299,6 +290,7 @@ const PortfolioShowcase = () => {
 
   return (
     <div className={`${styles.container} ${isLoaded ? styles.loaded : ''}`} ref={containerRef}>
+      {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>הפרויקטים שלי</h1>
@@ -332,42 +324,49 @@ const PortfolioShowcase = () => {
         </div>
       </section>
 
+      {/* Project Gallery */}
       <div className={styles.projectGallery}>
-        {projects.map((project, index) => {
-          const isIndustrial = project.id === 'industrial-project'
-          return (
-            <section 
-              key={project.id}
-              ref={el => projectRefs.current[project.id] = el}
-              className={styles.projectSection}
-              id={`project-${project.id}`}
-            >
-              <div className={styles.projectImageContainer}>
-                <img 
-                  src={project.images[0]}
-                  alt={project.title}
-                  className={styles.projectImage}
-                />
-                <div className={styles.projectOverlay} />
+        {projects.map((project, index) => (
+          <section 
+            key={project.id}
+            ref={el => projectRefs.current[project.id] = el}
+            className={styles.projectSection}
+            id={`project-${project.id}`}
+          >
+            <div className={styles.projectImageContainer}>
+              <img 
+                src={project.images[0]}
+                alt={project.title}
+                className={styles.projectImage}
+              />
+              <div className={styles.projectOverlay} />
+            </div>
+            
+            <div className={styles.projectContent}>
+              <div className={styles.textGlassWrapper}>
+                <div className={styles.projectCategory}>{project.category}</div>
               </div>
               
-              <div className={`${styles.projectContent} ${isIndustrial ? styles.industrialStyle : ''}`}>
-                <div className={styles.projectCategory}>{project.category}</div>
+              <div className={styles.textGlassWrapper}>
                 <h2 className={styles.projectTitle}>{project.title}</h2>
-                <p className={styles.projectDescription}>{project.description}</p>
-                
-                <button 
-                  className={`${styles.galleryButton} ${isIndustrial ? styles.industrialStyle : ''}`}
-                  onClick={() => openGallery(project)}
-                >
-                  צפה בגלריה המלאה
-                </button>
               </div>
-            </section>
-          )
-        })}
+              
+              <div className={styles.textGlassWrapper}>
+                <p className={styles.projectDescription}>{project.description}</p>
+              </div>
+              
+              <button 
+                className={styles.galleryButton}
+                onClick={() => openGallery(project)}
+              >
+                צפה בגלריה המלאה
+              </button>
+            </div>
+          </section>
+        ))}
       </div>
 
+      {/* Gallery Modal */}
       {selectedProject && (
         <div className={`${styles.galleryModal} ${selectedProject ? styles.active : ''}`}>
           <div className={styles.galleryContainer}>

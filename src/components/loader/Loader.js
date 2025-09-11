@@ -1,27 +1,13 @@
 import React from 'react';
 import styles from './Loader.module.css';
 
-const Loader = ({ size = '2.8rem', speed = '0.9s', color = '#183153' }) => {
-  const loaderStyle = {
-    '--uib-size': size,
-    '--uib-speed': speed,
-    '--uib-color': color,
-  };
-
-  return <>
-  <div className={styles.background}>
-    <div className={styles.dotSpinner} style={loaderStyle}>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
-      <div className={styles.dotSpinnerDot}></div>
+const LoadingEffect = () => {
+  return (
+    <div className={styles.container}>
+      <span className={styles.loader}></span>
+      <span className={styles.text}>טוען...</span>
     </div>
-    </div>
-</>
+  );
 };
 
-export default Loader;
+export default LoadingEffect;

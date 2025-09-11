@@ -23,7 +23,7 @@ import image8Mobile from "../images/אורלי דבי קרוסלת פתיחה 8.
 import image9Mobile from "../images/אורלי דבי קרוסלת פתיחה 9.png";
 
 // תמונת הלוגו
-import logoImage from "../images/אורלי דבי לוגו.png";
+import logoImage from "../images/אורלי לוגו לבן.png";
 
 import Loader from '../components/loader/Loader';
 import PrivacyPolicy from '../components/privacy/Privacy';
@@ -416,11 +416,6 @@ const ArchitectLanding = () => {
               מעצבת פנים ואדריכלית - ליווי מלא מהשרטוטים עד לקבלת המפתח
             </p> */}
           </div>
-          
-          {/* Scroll Indicator */}
-          <div ref={scrollIndicatorRef} className={styles.scrollIndicator} onClick={scrollToSecondScreen}>
-            <div className={styles.scrollArrow}></div>
-          </div>
         </div>
 
         {/* Action Buttons Container */}
@@ -432,6 +427,11 @@ const ArchitectLanding = () => {
             <span>לפרוייקטים</span>
           </button>
         </div>
+
+        {/* Scroll Indicator - הועבר מתחת לכפתורים */}
+        {/* <div ref={scrollIndicatorRef} className={styles.scrollIndicator} onClick={scrollToSecondScreen}>
+          <div className={styles.scrollArrow}></div>
+        </div> */}
       </div>
 
       {/* Contact Form Overlay */}

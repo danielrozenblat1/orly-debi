@@ -1,8 +1,7 @@
 .testimonialContainer {
     /* קונטיינר חיצוני - קבוע ברוחב 30% במסכים גדולים */
-    width: 90%;
-    height: 70vh; /* גובה מלא של המסך */
-    margin:0 auto 2%;
+    width: 100%;
+    height: 80vh; /* גובה מלא של המסך */
     position: relative;
     overflow: hidden; /* מונע גלישת תוכן */
   }

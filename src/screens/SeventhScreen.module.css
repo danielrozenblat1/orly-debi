@@ -6,7 +6,7 @@
 width:90%;
 margin:2% auto;
     direction: rtl;
-  font-family: 'AssistantR', sans-serif;
+  font-family: 'OpenSansR', sans-serif;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
 }
 
@@ -17,7 +17,7 @@ margin:2% auto;
   padding: 1% 0;
   text-align: center;
   line-height: 1.25;
-  font-family: 'Assistant';
+  font-family: 'OpenSans';
   perspective: 1000px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }

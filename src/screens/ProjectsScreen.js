@@ -130,10 +130,10 @@ const PortfolioShowcase = () => {
       description: 'מהפך דרמטי בבית - כשקיר שחור גונב את ההצגה',
       category: 'שיפוץ',
       images: [
-        shiputz15, shiputz18, shiputz2, shiputz1, shiputz3, shiputz4, shiputz5,
-        shiputz6, shiputz7, shiputz8, shiputz9, shiputz10,
+   shiputz6,   shiputz2,  shiputz10,shiputz15, shiputz4, shiputz20, shiputz16, shiputz18, shiputz1, shiputz3,  shiputz5,
+        shiputz7, shiputz8, shiputz9, 
         shiputz11, shiputz12, shiputz13, shiputz14,
-        shiputz16, shiputz17, shiputz19, shiputz20,
+        shiputz17, shiputz19, 
         shiputz21, shiputz22, shiputz23, shiputz24, shiputz25,
         shiputz26
       ]
@@ -289,14 +289,14 @@ const PortfolioShowcase = () => {
   }
 
   return (
-    <div className={`${styles.container} ${isLoaded ? styles.loaded : ''}`} ref={containerRef}>
+    <div className={`${styles.container} ${isLoaded ? styles.loaded : ''}`} ref={containerRef} id="פרוייקטים">
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>הפרויקטים שלי</h1>
-          <p className={styles.heroSubtitle}>לחצו על כל תמונה כדי להגיע לפרוייקט</p>
+          {/* <p className={styles.heroSubtitle}></p> */}
           <div className={styles.netflixGrid}>
-            {projects.map((project, index) => (
+            {/* {projects.map((project, index) => (
               <div
                 key={project.id}
                 ref={el => thumbnailRefs.current[index] = el}
@@ -319,7 +319,7 @@ const PortfolioShowcase = () => {
                   <span className={styles.thumbnailCategory}>{project.category}</span>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>

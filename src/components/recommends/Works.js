@@ -18,7 +18,7 @@ const Works = () => {
       <div className={styles.explain}>
 בשנים האחרונות העברתי עשרות פרוייקטים
       </div>
-<BeforeAfter/>
+
       <div className={styles.explain}>
 וזה מה שהיה ללקוחות לומר בסוף התהליך
       </div>

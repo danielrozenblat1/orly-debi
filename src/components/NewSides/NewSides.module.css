@@ -8,10 +8,11 @@
   align-items: center;
   margin: 2% auto;
   direction: rtl;
+  padding: 0 10px; /* הוספת padding כללי */
 }
 
 .item {
-  width: 500px;
+  width: min(800px, 95vw); /* מקסימום 800px או 95% מרוחב המסך */
   height: auto;
   margin-bottom: 40px;
   opacity: 1;
@@ -39,20 +40,20 @@
 }
 
 .number {
-  font-size: 5rem;
+  font-size: clamp(3rem, 8vw, 5rem); /* גודל גמיש בין 3rem ל-5rem */
   font-weight: 200;
   color: transparent;
   -webkit-text-stroke: 1px #967654;
   text-stroke: 1px #967654;
   font-family: 'Assistant', sans-serif;
   letter-spacing: 2px;
-  min-width: 60px;
+  min-width: clamp(40px, 10vw, 60px); /* רוחב גמיש */
   text-align: center;
 }
 
 .text {
-  font-family: 'AssistantR', sans-serif;
-  font-size: 16px;
+  font-family: 'OpenSansR', sans-serif;
+  font-size: clamp(14px, 2.5vw, 16px); /* גודל גמיש */
   color: #2c2c2c;
   font-weight: 400;
   line-height: 1.5;
@@ -75,22 +76,22 @@
   }
   
   .item {
-    width: 600px;
+    width: min(600px, 90vw);
     padding: 25px;
   }
   
   .number {
-    font-size: 6rem;
-    min-width: 80px;
+    font-size: clamp(5rem, 10vw, 6rem);
+    min-width: clamp(60px, 12vw, 80px);
   }
   
   .text {
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 25px;
+    gap: clamp(20px, 4vw, 25px);
   }
 }
 
@@ -102,22 +103,22 @@
   }
   
   .item {
-    width: 580px;
+    width: min(580px, 88vw);
     padding: 24px;
   }
   
   .number {
-    font-size: 5.8rem;
-    min-width: 75px;
+    font-size: clamp(5rem, 9vw, 5.8rem);
+    min-width: clamp(60px, 11vw, 75px);
   }
   
   .text {
-    font-size: 17px;
+    font-size: clamp(16px, 2.8vw, 17px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 24px;
+    gap: clamp(20px, 3.5vw, 24px);
   }
 }
 
@@ -129,22 +130,22 @@
   }
   
   .item {
-    width: 550px;
+    width: min(550px, 85vw);
     padding: 23px;
   }
   
   .number {
-    font-size: 5.5rem;
-    min-width: 70px;
+    font-size: clamp(4.5rem, 8vw, 5.5rem);
+    min-width: clamp(55px, 10vw, 70px);
   }
   
   .text {
-    font-size: 16px;
+    font-size: clamp(15px, 2.5vw, 16px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 23px;
+    gap: clamp(18px, 3vw, 23px);
   }
 }
 
@@ -156,22 +157,22 @@
   }
   
   .item {
-    width: 520px;
+    width: min(520px, 85vw);
     padding: 22px;
   }
   
   .number {
-    font-size: 5.2rem;
-    min-width: 68px;
+    font-size: clamp(4.2rem, 7vw, 5.2rem);
+    min-width: clamp(55px, 9vw, 68px);
   }
   
   .text {
-    font-size: 16px;
+    font-size: clamp(15px, 2.2vw, 16px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 22px;
+    gap: clamp(18px, 2.8vw, 22px);
   }
 }
 
@@ -183,22 +184,22 @@
   }
   
   .item {
-    width: 480px;
+    width: min(480px, 85vw);
     padding: 20px;
   }
   
   .number {
-    font-size: 5rem;
-    min-width: 65px;
+    font-size: clamp(4rem, 6.5vw, 5rem);
+    min-width: clamp(50px, 8vw, 65px);
   }
   
   .text {
-    font-size: 16px;
+    font-size: clamp(15px, 2.1vw, 16px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 20px;
+    gap: clamp(16px, 2.5vw, 20px);
   }
 }
 
@@ -210,22 +211,22 @@
   }
   
   .item {
-    width: 450px;
+    width: min(450px, 85vw);
     padding: 18px;
   }
   
   .number {
-    font-size: 4.5rem;
-    min-width: 60px;
+    font-size: clamp(3.8rem, 6vw, 4.5rem);
+    min-width: clamp(50px, 7vw, 60px);
   }
   
   .text {
-    font-size: 15px;
+    font-size: clamp(14px, 2.2vw, 15px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 18px;
+    gap: clamp(15px, 2.5vw, 18px);
   }
 }
 
@@ -237,22 +238,22 @@
   }
   
   .item {
-    width: 400px;
+    width: min(400px, 85vw);
     padding: 16px;
   }
   
   .number {
-    font-size: 4rem;
-    min-width: 55px;
+    font-size: clamp(3.5rem, 6vw, 4rem);
+    min-width: clamp(45px, 7vw, 55px);
   }
   
   .text {
-    font-size: 15px;
+    font-size: clamp(14px, 2.5vw, 15px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 16px;
+    gap: clamp(14px, 2.5vw, 16px);
   }
 }
 
@@ -261,81 +262,89 @@
   .container {
     max-width: 500px;
     margin: 3% auto;
+    padding: 0 15px;
   }
   
   .item {
-    width: 360px;
+    width: calc(100vw - 60px); /* ניצול מלא של המסך פחות margin */
+    max-width: 420px;
+    min-width: 320px;
     padding: 15px;
   }
   
   .number {
-    font-size: 3.8rem;
-    min-width: 50px;
+    font-size: clamp(3.2rem, 7vw, 3.8rem);
+    min-width: clamp(40px, 8vw, 50px);
   }
   
   .text {
-    font-size: 14px;
+    font-size: clamp(13px, 2.8vw, 14px);
   }
   
   .itemRight,
   .itemLeft {
-    gap: 15px;
+    gap: clamp(12px, 3vw, 15px);
   }
 }
 
 /* 350px-450px */
 @media (min-width: 350px) and (max-width: 449px) {
   .container {
-    max-width: 400px;
     margin: 3% auto;
+    padding: 0 20px;
   }
   
   .item {
-    width: 320px;
-    padding: 14px;
+    width: calc(100vw - 60px); /* ניצול דינמי של רוחב המסך */
+    max-width: 380px;
+    min-width: 280px;
+    padding: clamp(12px, 3vw, 14px);
   }
   
   .number {
-    font-size: 3.5rem;
-    min-width: 45px;
+    font-size: clamp(2.8rem, 8vw, 3.5rem);
+    min-width: clamp(35px, 8vw, 45px);
+    letter-spacing: clamp(1px, 0.3vw, 2px);
   }
   
   .text {
-    font-size: 14px;
+    font-size: clamp(13px, 3.5vw, 14px);
+    line-height: 1.4;
   }
   
   .itemRight,
   .itemLeft {
-    gap: 14px;
+    gap: clamp(10px, 3vw, 14px);
   }
 }
 
 /* מתחת ל-350px */
 @media (max-width: 349px) {
   .container {
-    max-width: 300px;
     margin: 4% auto;
-    padding: 0 10px;
+    padding: 0 15px;
   }
   
   .item {
-    width: 280px;
-    padding: 12px;
+    width: calc(100vw - 40px); /* ניצול מלא עם padding מינימלי */
+    max-width: 300px;
+    min-width: 250px;
+    padding: clamp(10px, 3vw, 12px);
   }
   
   .number {
-    font-size: 3rem;
-    min-width: 40px;
+    font-size: clamp(2.5rem, 9vw, 3rem);
+    min-width: clamp(30px, 8vw, 40px);
     letter-spacing: 1px;
   }
   
   .text {
-    font-size: 14px;
+    font-size: clamp(12px, 4vw, 14px);
     line-height: 1.4;
   }
   
   .itemRight,
   .itemLeft {
-    gap: 12px;
+    gap: clamp(8px, 3vw, 12px);
   }
 }

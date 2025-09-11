@@ -7,11 +7,16 @@ import money from "../icons/wired-outline-414-money-bag-dollar-hover-shake (2).j
 import dizzy from "../icons/wired-outline-1252-dizz-hover-pinch (2).json"
 import house from "../icons/wired-outline-63-home-loop-smoke.json"
 import styles from "./SixthScreen.module.css";
+import time from "../icons/wired-outline-472-hourglass-hover-rotation.json"
 import PearlGrid from '../components/pains/Pains';
 import IconTextComponent from '../components/can copy/Can';
 import MinimalComponent from '../components/NewSides/NewSides';
-
-
+import { Palette } from 'lucide-react';
+import pallete from "../icons/wired-outline-761-pantone-color-palette-hover-pinch.json"
+import sign from "../icons/wired-outline-1019-document-signature-hand-hover-pinch.json"
+import price from "../icons/wired-outline-2913-price-down-hover-pinch.json"
+import judge from "../icons/wired-outline-119-law-judge-hover-hit.json"
+import stress from "../icons/wired-outline-2471-brain-mental-anxious-hover-pinch.json"
 // קומפוננטת טקסט מתחלף
 const CustomTextTransition = ({ texts, interval = 3000, className = "" }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,11 +65,11 @@ const SixthScreen = () => {
 
     const QUESTIONS = [
                "חושבים לשפץ ולא יודעים מאיפה להתחיל?",
-  
+       "מרגישים שהגיע הזמן לרענון בבית?",
         "קניתם דירה חדשה מקבלן?",
  
      "עומדים לעבור לדירה חדשה?",
-      "מרגישים שהגיע הזמן לרענון בבית?",
+ 
     ];
 
     
@@ -167,27 +172,31 @@ const SixthScreen = () => {
  <div className={styles.title}>אז למה בעצם חשוב להעזר במעצבת פנים?</div>
            */}
           <div className={styles.description}>
-        התחלה חדשה היא לא משהו שקורה כל יום ואני בטוחה שהראש שלכם כבר מלא ברעיונות, השראות וחלומות על איך הבית ייראה כשיהיה מוכן
+
+תחילתו של פרק חדש היא לא דבר שבשגרה, ואני בטוחה שהמחשבות שלכם כבר מלאות ברעיונות, השראות וחלומות על איך ייראה הבית שלכם כשהכול יהיה מוכן.  במקביל
       </div>
           <div className={styles.description}>
             <strong>
-       ועם זאת, השינוי הזה מלווה בהמון מחשבות וחששות..
+   טבעי שגם יעלו לא מעט התלבטויות, שאלות וחששות...
        </strong>
       </div>
-   <div className={styles.row}>
-    <IconTextComponent text="אתם צריכים לקבל החלטות קריטיות עוד לפני שבכלל נסגרתם על סגנון וכיוון" icon={plans}/>
-        <IconTextComponent text="עוד לא התחלתם והתקציב שהקצבתם לתהליך מתחיל להרגיש כמו טיפה בים" icon={budget}/>
-    <IconTextComponent text="אתם מפחדים לבזבז עשרות אלפי שקלים על טעויות מיותרות " icon={money}/>
-   </div>
-     <div className={styles.row}>
-    <IconTextComponent text="כבר התחלתם להתבלבל מקבלנים וספקים שכל אחד מציע דבר אחר" icon={dizzy}/>
-        <IconTextComponent text="עולים חששות שהבית לא ייראה בדיוק כמו שתכננתם.." icon={house}/>
 
-   </div>
-   <div className={styles.description}>כשיש לכם מישהי שמבינה בדיוק איפה להתחיל, איך להימנע מטעויות יקרות ומלווה אתכם צעד אחר צעד התהליך פתאום הופך להיות פשוט ומהנה במקום מלחיץ ומבלבל <strong>והכי חשוב</strong>.
+<div className={styles.row}>
+    <IconTextComponent text="מפחדים מהוצאות לא צפויות או עלויות שיצאו משליטה" icon={money}/>
+    <IconTextComponent text="חוששים מבחירה של חומרים, צבעים או סגנון שלא יתאימו לכם לאורך זמן" icon={pallete}/>
+    <IconTextComponent text="חוששים שהבית לא ייראה כמו שדמיינתם או שלא יתאים לצרכים שלכם בפועל" icon={house}/>
+    <IconTextComponent text="מבולבלים לגבי מה כולל כל שלב, אילו אנשי מקצוע מעורבים ומה הסדר הנכון" icon={dizzy}/>
+    <IconTextComponent text="חוששים שהפרויקט ייתקע, יתעכב או לא יסתיים בזמן" icon={time}/>
+    <IconTextComponent text="לא יודעים איך להתנהל מול הקבלן או אנשי המקצוע" icon={sign}/>
+    <IconTextComponent text="חוששים שהשינויים יפגעו בערך הדירה בעתיד" icon={price}/>
+    <IconTextComponent text="מרגישים תחושת הצפה, בלבול וסטרס מהעומס של קבלת ההחלטות" icon={stress}/>
+    <IconTextComponent text="צריכים לקבל החלטות קריטיות עוד לפני שבכלל נסגרתם על סגנון וכיוון" icon={judge}/>
+</div>
+   <div className={styles.description}>
+כאדריכלית ומעצבת פנים, אני פוגשת לא מעט לקוחות שמגיעים עם חששות ופחדים טבעיים מהתהליך – וזה לגמרי מובן. חשוב לי לומר לכם 
 </div>
           <div className={styles.title}>
-   יש מי ש..
+אני כאן:
       </div>
          <MinimalComponent/>
             </div>

@@ -84,9 +84,7 @@
   text-align: center;
   font-size: 1.3rem;
   font-family: "AssistantR";
-  background: linear-gradient(135deg, #8B7355, #A0916B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
   filter: drop-shadow(0 1px 1px rgba(139, 115, 85, 0.1));
   margin: 0;
 }
@@ -105,7 +103,7 @@
 .title {
   font-size: 2.2rem;
   margin: 1.5rem 1.5rem 3rem 0;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   text-align: center;
   direction: rtl;
   line-height: 1.2;
@@ -156,20 +154,20 @@
 }
 
 .bullet {
-  color: rgba(181, 160, 130, 0.7);
+
   font-size: 0.7rem;
   margin-top: 0.25rem;
 }
 
 .pointText {
-  color: rgba(139, 115, 85, 0.85);
+
   font-size: 0.9rem;
   font-family: "AssistantR";
   line-height: 1.3;
 }
 
 .arrow {
-  color: rgba(181, 160, 130, 0.7);
+
   font-size: 0.7rem;
   transition: transform 0.3s ease;
 }

@@ -146,10 +146,10 @@ const Timeline = () => {
             </div>
           ))}
         </div>
-          <div className={styles.explain}>
+          {/* <div className={styles.explain}>
 אז אם כבר קניתם דירה מהקבלן, אתם רגע לפני שיפוץ או שיש לכם בית עסק ואתם רוצים להפוך את המסע הזה להרבה יותר קל,חסכוני ומהנה
-      </div>
-  <Button text="תלחצו כאן ואצור אתכם קשר!"/>
+      </div> */}
+  <Button text="אורלי, בואי נדבר!"/>
 
       </div>
 

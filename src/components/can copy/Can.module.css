@@ -5,7 +5,8 @@
   background: #ffffff;
   padding: 0.65rem 1rem;
   direction: rtl;
-  width: 340px;
+  width: 700px;
+
   border-radius: 12px;
   position: relative;
   z-index: 1;
@@ -40,7 +41,7 @@
 }
 
 .icon {
-  width: 20%;
+  width: 12%;
   color: #6b7280;
   position: relative;
   z-index: 3;
@@ -53,8 +54,8 @@
 /* מתחת ל-350px */
 @media (max-width: 349px) {
   .container {
-    width: 320px; /* הוגדל מ-280px ל-320px */
-    padding: 0.4rem 0.8rem; /* הוגדל הפדינג */
+    width: 320px;
+    padding: 0.4rem 0.8rem;
     border-radius: 8px;
     margin: 8px auto;
     box-shadow: 
@@ -64,10 +65,10 @@
   }
 
   .text {
-    font-size: 0.95rem; /* הוגדל מ-0.85rem ל-0.95rem */
+    font-size: 0.95rem;
     width: 75%;
     margin-right: 5px;
-    line-height: 1.3; /* הוגדל מ-1.2 ל-1.3 */
+    line-height: 1.3;
   }
 
   .icon {
@@ -84,15 +85,15 @@
 /* בין 350px ל-450px */
 @media (min-width: 350px) and (max-width: 450px) {
   .container {
-    width: 330px; /* הוגדל מ-300px ל-330px */
-    padding: 0.5rem 1rem; /* הוגדל הפדינג */
+    width: 345px;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
     margin: 10px auto;
   }
 
   .text {
-    font-size: 1.0rem; /* הוגדל מ-0.9rem ל-1.0rem */
-    width: 72%;
+    font-size: 0.9rem;
+    width: 75%;
     margin-right: 6px;
   }
 
@@ -131,5 +132,194 @@
 
   .container:hover {
     transform: translateY(-2.5px);
+  }
+}
+
+/* בין 550px ל-650px */
+@media (min-width: 550px) and (max-width: 650px) {
+  .container {
+    width: 480px;
+    padding: 0.9rem 1.2rem;
+    border-radius: 15px;
+    margin: 18px auto;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    width: 72%;
+    margin-right: 15px;
+    line-height: 1.5;
+  }
+
+  .icon {
+    width: 16%;
+    padding-left: 15px;
+    margin-left: 15px;
+  }
+
+  .container:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* בין 650px ל-750px */
+@media (min-width: 650px) and (max-width: 750px) {
+  .container {
+    width: 580px;
+    padding: 1rem 1.3rem;
+    border-radius: 16px;
+    margin: 20px auto;
+  }
+
+  .text {
+    font-size: 1.25rem;
+    width: 74%;
+    margin-right: 16px;
+    line-height: 1.52;
+  }
+
+  .icon {
+    width: 15%;
+    padding-left: 16px;
+    margin-left: 16px;
+  }
+
+  .container:hover {
+    transform: translateY(-3.5px);
+  }
+}
+
+/* בין 750px ל-850px */
+@media (min-width: 750px) and (max-width: 850px) {
+  .container {
+    width: 680px;
+    padding: 1.1rem 1.4rem;
+    border-radius: 18px;
+    margin: 22px auto;
+  }
+
+  .text {
+    font-size: 1.3rem;
+    width: 75%;
+    margin-right: 17px;
+    line-height: 1.55;
+  }
+
+  .icon {
+    width: 14%;
+    padding-left: 17px;
+    margin-left: 17px;
+  }
+
+  .container:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* בין 850px ל-950px */
+@media (min-width: 850px) and (max-width: 950px) {
+  .container {
+    width: 780px;
+    padding: 1.2rem 1.5rem;
+    border-radius: 20px;
+    margin: 24px auto;
+  }
+
+  .text {
+    font-size: 1.35rem;
+    width: 76%;
+    margin-right: 18px;
+    line-height: 1.58;
+  }
+
+  .icon {
+    width: 13%;
+    padding-left: 18px;
+    margin-left: 18px;
+  }
+
+  .container:hover {
+    transform: translateY(-4.5px);
+  }
+}
+
+/* בין 950px ל-1050px */
+@media (min-width: 950px) and (max-width: 1050px) {
+  .container {
+    width: 880px;
+    padding: 1.3rem 1.6rem;
+    border-radius: 22px;
+    margin: 26px auto;
+  }
+
+  .text {
+    font-size: 1.4rem;
+    width: 77%;
+    margin-right: 19px;
+    line-height: 1.6;
+  }
+
+  .icon {
+    width: 12%;
+    padding-left: 19px;
+    margin-left: 19px;
+  }
+
+  .container:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* בין 1050px ל-1150px */
+@media (min-width: 1050px) and (max-width: 1150px) {
+  .container {
+    width: 700px;
+    padding: 1.4rem 1.7rem;
+    border-radius: 24px;
+    margin: 28px auto;
+  }
+
+  .text {
+    font-size: 1.45rem;
+    width: 78%;
+    margin-right: 20px;
+    line-height: 1.62;
+  }
+
+  .icon {
+    width: 11%;
+    padding-left: 20px;
+    margin-left: 20px;
+  }
+
+  .container:hover {
+    transform: translateY(-5.5px);
+  }
+}
+
+/* בין 1150px ל-1250px */
+@media (min-width: 1150px) and (max-width: 1250px) {
+  .container {
+  width: 700px;
+    padding: 1.5rem 1.8rem;
+    border-radius: 26px;
+    margin: 30px auto;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    width: 79%;
+    margin-right: 21px;
+    line-height: 1.65;
+  }
+
+  .icon {
+    width: 10%;
+    padding-left: 21px;
+    margin-left: 21px;
+  }
+
+  .container:hover {
+    transform: translateY(-6px);
   }
 }

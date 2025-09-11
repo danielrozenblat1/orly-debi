@@ -1,5 +1,5 @@
 @import url("./fonts/font.css");
 
 body{
-    background: linear-gradient(145deg,rgb(255, 248, 242) 0%, rgb(246, 237, 229) 50%, rgb(255, 246, 240) 100%);
+    background: linear-gradient(145deg,#ede5dd 0%, rgb(255, 241, 231) 50%, rgb(255, 246, 240) 100%);
 }

@@ -16,15 +16,18 @@ import Works from './components/recommends/Works';
 import SevevnthScreen from './screens/SeventhScreen';
 import SixthScreen from './screens/SixthScreen';
 import PlayerColumns from './components/columns/Columns';
+import MeScreen from './screens/MeScreen';
+import NavBarNew from './components/NewNav orly/NavBarNew';
 function App() {
   return <>
   {/* <ArcoriaTitleEffects/> */}
   {/* <ImageCarousel/> */}
+  <NavBarNew/>
   <ArchitectLanding/>
 {/* <SecondScreen/> */}
 <SixthScreen/>
 <PlayerColumns/>
-  <AboutMe/>
+<MeScreen/>
 {/* <Works/> */}
 <ProjectsScreen/>
 <FirstScreen/>

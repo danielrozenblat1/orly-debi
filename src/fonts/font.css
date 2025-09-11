@@ -29,3 +29,9 @@
   font-weight:300;
   font-style: normal;
 }
+@font-face {
+  font-family: 'OpenSansR';
+  src: url('./opensanshebrew-light-webfont.ttf') format('truetype');
+  font-weight:300;
+  font-style: normal;
+}
